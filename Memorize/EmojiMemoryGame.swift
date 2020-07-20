@@ -15,8 +15,8 @@ class EmojiMemoryGame{
     
     //static func sending this function to the 'type' of the Class (functional programming), not the instance of the class (object oriented programming)
     static func createMemoryGame()-> MemoryGame<String> {
-        let emojis: Array<String> = ["🌚","🌝","🌞"]
-        return MemoryGame<String>(numberOfPairsOfCards: emojis.count) { (pairIndex: Int) -> String in
+        let emojis: Array<String> = ["🌚","🌝","🌞","👻","😈","👏","🤥","😱"].shuffled()
+        return MemoryGame<String>(numberOfPairsOfCards: Int.random(in: 2...5)) { (pairIndex: Int) -> String in
             emojis[pairIndex]
         }
     }
